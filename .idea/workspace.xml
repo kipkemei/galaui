@@ -2,14 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="29252c83-6bcd-4f02-a0d2-9558007c320d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/img/ambulance.jpeg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Map.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Map.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/views/Staff.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/views/Staff.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Services.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Services.jsx" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -69,7 +63,7 @@
       <workItem from="1588343191355" duration="1029000" />
       <workItem from="1588412547060" duration="11997000" />
       <workItem from="1588438166490" duration="319000" />
-      <workItem from="1588606978705" duration="4490000" />
+      <workItem from="1588606978705" duration="4927000" />
     </task>
     <servers />
   </component>

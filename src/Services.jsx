@@ -10,7 +10,7 @@ export default class  {
         };
         this.CONFIG = {headers: this.AUTH};
         this.that = that;
-        this.base_url = "http://35.174.138.196:8001/";
+        this.base_url = "http://3.83.220.138:8001/";
     }
 
     __completeSubmission = (
