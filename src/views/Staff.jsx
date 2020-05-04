@@ -11,197 +11,26 @@ import {
   Row,
   Col
 } from "reactstrap";
-import {GoogleMap, Marker, withGoogleMap, withScriptjs} from "react-google-maps";
-
-const data = [
-  {
-    name: "James Maina",
-    address: "4190-00100",
-    city: "Nairobi",
-    role: "Pharmacist",
-    status: "active",
-    description: "Cardiatic researcher with pseudo neomral power"
-  },
-  {
-    name: "Samuel Ndiwa",
-    address: "4190",
-    city: "Kisii",
-    role: "Doctor",
-    status: "active",
-    description: "Neural researcher"
-  },
-  {
-    name: "Timothy Kiptoo",
-    address: "4190-00100",
-    city: "Nanyuki",
-    role: "Nurse",
-    status: "active",
-    description: "CDC-10 asssistant"
-  },
-  {
-    name: "Tomas Oloo",
-    address: "4190-00100",
-    city: "Mombasa",
-    role: "Pharmacist",
-    status: "active",
-    description: "Lympathy and trigonometry"
-  },
-  {
-    name: "Jane Waswa",
-    address: "Footbal 43",
-    city: "Eldoret",
-    role: "Trainee Nurse",
-    status: "active",
-    description: "Architect"
-  },
-  {
-    name: "Lyon Founier",
-    address: "4190-00100",
-    city: "Nakuru",
-    role: "Doctor",
-    status: "active",
-    description: "Psychiatrist"
-  },
-  {
-    name: "Mehn Mabonga",
-    address: "4190-00100",
-    city: "Thika",
-    role: "Nurse",
-    status: "active",
-    description: "Gestation and nutrition"
-  },
-  {
-    name: "Samuel Ndiwa",
-    address: "4190",
-    city: "Kisii",
-    role: "Doctor",
-    status: "active",
-    description: "Neural researcher"
-  },
-  {
-    name: "Timothy Kiptoo",
-    address: "4190-00100",
-    city: "Nanyuki",
-    role: "Nurse",
-    status: "active",
-    description: "CDC-10 asssistant"
-  },
-  {
-    name: "Tomas Oloo",
-    address: "4190-00100",
-    city: "Mombasa",
-    role: "Pharmacist",
-    status: "active",
-    description: "Lympathy and trigonometry"
-  },
-  {
-    name: "Jane Waswa",
-    address: "Footbal 43",
-    city: "Eldoret",
-    role: "Trainee Nurse",
-    status: "active",
-    description: "Architect"
-  },
-  {
-    name: "Lyon Founier",
-    address: "4190-00100",
-    city: "Nakuru",
-    role: "Doctor",
-    status: "active",
-    description: "Psychiatrist"
-  },
-  {
-    name: "Mehn Mabonga",
-    address: "4190-00100",
-    city: "Thika",
-    role: "Nurse",
-    status: "active",
-    description: "Gestation and nutrition"
-  },
-  {
-    name: "Samuel Ndiwa",
-    address: "4190",
-    city: "Kisii",
-    role: "Doctor",
-    status: "active",
-    description: "Neural researcher"
-  },
-  {
-    name: "Timothy Kiptoo",
-    address: "4190-00100",
-    city: "Nanyuki",
-    role: "Nurse",
-    status: "active",
-    description: "CDC-10 asssistant"
-  },
-  {
-    name: "Tomas Oloo",
-    address: "4190-00100",
-    city: "Mombasa",
-    role: "Pharmacist",
-    status: "active",
-    description: "Lympathy and trigonometry"
-  },
-  {
-    name: "Jane Waswa",
-    address: "Footbal 43",
-    city: "Eldoret",
-    role: "Trainee Nurse",
-    status: "active",
-    description: "Architect"
-  },
-  {
-    name: "Lyon Founier",
-    address: "4190-00100",
-    city: "Nakuru",
-    role: "Doctor",
-    status: "active",
-    description: "Psychiatrist"
-  },
-  {
-    name: "Mehn Mabonga",
-    address: "4190-00100",
-    city: "Thika",
-    role: "Nurse",
-    status: "active",
-    description: "Gestation and nutrition"
-  },
-  {
-    name: "James Maina",
-    address: "4190-00100",
-    city: "Nairobi",
-    role: "Pharmacist",
-    status: "active",
-    description: "Cardiatic  with pseudo neomral power"
-  },
-  {
-    name: "James Maina",
-    address: "4190-00100",
-    city: "Nairobi",
-    role: "Pharmacist",
-    status: "active",
-    description: "Ca with pseudo neomral power"
-  },
-  {
-    name: "James Maina",
-    address: "4190-00100",
-    city: "Nairobi",
-    role: "Pharmacist",
-    status: "active",
-    description: "Cardiatic researcher with pseudo ower"
-  },
-  {
-    name: "James Maina",
-    address: "4190-00100",
-    city: "Nairobi",
-    role: "Pharmacist",
-    status: "active",
-    description: "Cardiatic researc power"
-  },
-];
+import Funcstions from "../Funcstions";
+import Services from "../Services";
 
 
 class Staff extends React.Component {
+  constructor(props){
+    super(props);
+    this.state = {
+      alert: null,
+      itemList: []
+    };
+
+    this.funcs = new Funcstions(this);
+    this.services = new Services(this);
+  }
+
+  componentDidMount() {
+    this.services.getForList("staff/").finally()
+  }
+
   render() {
     return (
       <>
@@ -213,29 +42,26 @@ class Staff extends React.Component {
                   <CardTitle tag="h4">Simple Table</CardTitle>
                 </CardHeader>
                 <CardBody>
-                  <Table responsive>
+                  <Table responsive bordered={true}>
                     <thead className="text-primary">
                       <tr>
-                        <th>#</th>
+                        <th>ID</th>
                         <th>Name</th>
-                        <th>Address</th>
-                        <th>City</th>
-                        <th>Role</th>
-                        <th>Status</th>
-                        <th className="text-right">Description</th>
+                        <th>Email</th>
+                        <th>DOB</th>
+                        <th>Location</th>
+                        <th>Designation</th>
                       </tr>
                     </thead>
                     <tbody>
-                    {data.map((item, i)=>{
+                    {this.state.itemList.map((item, i)=>{
                       return <tr key={i}>
-                        <td>{i+1}</td>
-                        <td>{item.name}</td>
-                        <td>{item.address}</td>
-                        <td>{item.city}</td>
-                        <td>{item.role}</td>
-                        <td>{item.status}</td>
-                        <td className="text-right">{item.description}</td>
-                        <td><a href="/maps">View</a></td>
+                        <td>{item.id}</td>
+                        <td>{item.user.first_name} {item.user.last_name}</td>
+                        <td>{item.user.email}</td>
+                        <td>{item.dob}</td>
+                        <td>{item.location}</td>
+                        <td>{item.designation}</td>
                       </tr>
                     })}
                     </tbody>

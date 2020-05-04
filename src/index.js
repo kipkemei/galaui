@@ -7,17 +7,20 @@ import { Router, Route, Switch, Redirect } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import "assets/scss/paper-dashboard.scss?v=1.1.0";
 import "assets/demo/demo.css";
+import "assets/css/login.css";
 import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import AdminLayout from "layouts/Admin.jsx";
+import Login from "./components/Login";
 
 const hist = createBrowserHistory();
 
 ReactDOM.render(
   <Router history={hist}>
     <Switch>
-      <Route path="/admin" render={props => <AdminLayout {...props} />} />
-      <Redirect to="/admin/dashboard" />
+        <Route path="/admin" render={props => <AdminLayout {...props} />} />
+        <Route path="/login" render={props => <Login />} />
+      <Redirect to="/login" />
     </Switch>
   </Router>,
   document.getElementById("root")

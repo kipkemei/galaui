@@ -2,6 +2,9 @@ import Dashboard from "views/Dashboard.jsx";
 import Maps from "views/Map.jsx";
 import UserPage from "views/User.jsx";
 import Staff from "views/Staff";
+import Drug from "./views/Drug";
+import Disease from "./views/Disease";
+
 
 var routes = [
   {
@@ -23,6 +26,20 @@ var routes = [
     name: "Staff List",
     icon: "nc-icon nc-tile-56",
     component: Staff,
+    layout: "/admin"
+  },
+  {
+    path: "/disease",
+    name: "Disease",
+    icon: "nc-icon nc-tile-56",
+    component: Disease,
+    layout: "/admin"
+  },
+  {
+    path: "/drugs",
+    name: "Drugs",
+    icon: "nc-icon nc-tile-56",
+    component: Drug,
     layout: "/admin"
   },
   {
